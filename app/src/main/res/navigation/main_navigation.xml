@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/screenSatuFragment">
+
+    <fragment
+        android:id="@+id/screenSatuFragment"
+        android:name="com.tegarpenemuan.challengechapter3.fragment.ScreenSatuFragment"
+        android:label="Screen 1"
+        tools:layout="@layout/fragment_screen_satu" >
+        <action
+            android:id="@+id/action_screenSatuFragment_to_screenDuaFragment2"
+            app:destination="@id/screenDuaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenDuaFragment"
+        android:name="com.tegarpenemuan.challengechapter3.fragment.ScreenDuaFragment"
+        android:label="Screen 2"
+        tools:layout="@layout/fragment_screen_dua" >
+        <action
+            android:id="@+id/action_screenDuaFragment_to_screenSatuFragment2"
+            app:destination="@id/screenSatuFragment" />
+        <action
+            android:id="@+id/action_screenDuaFragment_to_screenTigaFragment"
+            app:destination="@id/screenTigaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenTigaFragment"
+        android:name="com.tegarpenemuan.challengechapter3.fragment.ScreenTigaFragment"
+        android:label="fragment_screen_tiga"
+        tools:layout="@layout/fragment_screen_tiga" >
+        <action
+            android:id="@+id/action_screenTigaFragment_to_screenEmpatFragment"
+            app:destination="@id/screenEmpatFragment" />
+        <argument
+            android:name="ShowData"
+            app:argType="com.tegarpenemuan.challengechapter3.model.Person" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenEmpatFragment"
+        android:name="com.tegarpenemuan.challengechapter3.fragment.ScreenEmpatFragment"
+        android:label="fragment_screen_empat"
+        tools:layout="@layout/fragment_screen_empat" >
+        <action
+            android:id="@+id/action_screenEmpatFragment_to_screenTigaFragment"
+            app:destination="@id/screenTigaFragment" />
+        <argument
+            android:name="nama"
+            app:argType="string" />
+    </fragment>
+</navigation>
